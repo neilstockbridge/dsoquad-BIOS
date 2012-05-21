@@ -8,6 +8,7 @@ PARTS += USB_core.o USB_init.o USB_int.o USB_mem.o USB_regs.o
 PARTS += ASM.o Config.o FAT12.o LCD.o Ident.o Memory.o \
   USB_bot.o USB_endp.o USB_prop.o USB_scsi.o BIOS.o Ext_Flash.o \
   Function.o Interrupt.o Main.o scsi_data.o USB_desc.o USB_istr.o USB_pwr.o
+PARTS += startup.o
 
 DELIVERABLES = SYS.HEX
 
@@ -23,7 +24,7 @@ CFLAGS += -fno-common -Os -std=gnu99 -ffunction-sections
 CFLAGS += -Wall -Wno-unused
 
 # Default linker arguments (disables GCC-provided startup.c, creates .map file)
-LFLAGS += -nostartfiles -Wl,-Map=$(NAME).map# -Wl,-gc-sections
+LFLAGS += -nostartfiles -Wl,-Map=$(NAME).map -eReset_Handler -Wl,-gc-sections
 
 AFLAGS = -mcpu=cortex-m3
 
@@ -45,7 +46,7 @@ VPATH = stm:USBLib:src
 	$(OBJCOPY) -O binary $< $@
 
 %.elf: %.lds $(PARTS)
-	$(CC) $(CFLAGS) -o $@ $(PARTS) ${LFLAGS} ${LIBS} -T $<
+	$(CC) $(CFLAGS) -o $@ $(PARTS) $(LFLAGS) $(LIBS) -T $<
 
 # Rebuild all parts if any header or the Makefile changes:
 .c.o: *.h Makefile
