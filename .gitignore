@@ -1,2 +1,5 @@
+*.swp
+*.map
+tags
 SYS.elf
 SYS.HEX
