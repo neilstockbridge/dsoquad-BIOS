@@ -108,9 +108,9 @@ void SCSI_ReadCapacity10_Cmd(void)
 {
 
   MAL_GetStatus();
-  ReadCapacity10_Data[0] = (u8)(Mass_Block_Count - 1 >> 24);
-  ReadCapacity10_Data[1] = (u8)(Mass_Block_Count - 1 >> 16);
-  ReadCapacity10_Data[2] = (u8)(Mass_Block_Count - 1 >>  8);
+  ReadCapacity10_Data[0] = (u8)((Mass_Block_Count - 1) >> 24);
+  ReadCapacity10_Data[1] = (u8)((Mass_Block_Count - 1) >> 16);
+  ReadCapacity10_Data[2] = (u8)((Mass_Block_Count - 1) >>  8);
   ReadCapacity10_Data[3] = (u8)(Mass_Block_Count - 1);
 
   ReadCapacity10_Data[4] = (u8)(Mass_Block_Size >>  24);
