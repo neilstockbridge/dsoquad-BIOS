@@ -5,9 +5,9 @@ PARTS += core_cm3.o
 PARTS += misc.o stm32f10x_dma.o stm32f10x_gpio.o stm32f10x_rcc.o stm32f10x_tim.o stm32f10x_adc.o stm32f10x_usart.o stm32f10x_dac.o stm32f10x_flash.o stm32f10x_fsmc.o stm32f10x_spi.o
 PARTS += USB_core.o USB_init.o USB_int.o USB_mem.o USB_regs.o
 # Left out: Authenticate.o 2FAT12.o
-PARTS += ASM.o Config.o FAT12.o LCD.o Ident.o Memory.o \
-  USB_bot.o USB_endp.o USB_prop.o USB_scsi.o BIOS.o Ext_Flash.o \
-  Function.o Interrupt.o Main.o scsi_data.o USB_desc.o USB_istr.o USB_pwr.o
+PARTS += ASM.o Config.o FAT12.o LCD.o Ident.o Memory.o USB_bot.o USB_endp.o \
+  USB_prop.o USB_scsi.o BIOS.o Ext_Flash.o Function.o Interrupt.o Main.o \
+  scsi_data.o USB_desc.o USB_istr.o USB_pwr.o serial.o
 PARTS += startup.o
 
 DELIVERABLES = SYS.HEX
