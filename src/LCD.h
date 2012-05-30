@@ -33,7 +33,7 @@ void Clear_Screen(u16 Color);
 void Point_SCR(u16 x0, u16 y0);
 u16  Get_TAB_8x14(u8 Code, u16 Row);
 
-void Display_Str(u16 x0, u16 y0, u16 Color, u8 Mode, u8 *s);
+void Display_Str(u16 x0, u16 y0, u16 Color, u8 Mode, const char *s);
 void Display_Logo(u16 x0, u16 y0);
 void LCD_Set_Block(u16 x1, u16 x2, u16 y1, u16 y2); 
 
