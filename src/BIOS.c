@@ -15,10 +15,10 @@ uc8  DFU_Ver[5]  = "3.10";
 u8   VerStr[8];
 u8   Clash = 0;
 
-const G_attr G_ATTR[1] =//LCD_X;LCD_Y;Yp_Max;Xp_Max;Tg_Num;Yv_Max;Xt_Max
+const G_attr G_ATTR[1] ={//LCD_X;LCD_Y;Yp_Max;Xp_Max;Tg_Num;Yv_Max;Xt_Max
                        {  400,   240,   8-1,    22-1,   15,     200,    4096,  
                         //Co_Max;Ya_Num;Yd_Num;INSERT;KpA1;KpA2;KpB1;KpB2
-                           1,     1,     1,     17,    0,   1024,  0, 1024};
+                           1,     1,     1,     17,    0,   1024,  0, 1024}};
 
 const Y_attr Y_ATTR[9] ={//  STR     KA1    KA2    KB1    KB2     SCALE 
                          { "50mV",    0,   1024,    0,   1024,    2000},
