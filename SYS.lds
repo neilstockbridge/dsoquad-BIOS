@@ -11,13 +11,11 @@ SECTIONS
 {
   .  = 0x0;          /* From 0x00000000 */
 
-  .bios 0x08004200 (NOLOAD) : {
-    BIOS.o
-  }
-
   .text : {
     _vectors = .;
     *(.isr_vectors)  /* Vector table */
+    . = 0x200;
+    ASM.o
     *(.text*)        /* Program code */
     *(.rodata*)      /* Read only data */
     _etext = .;
