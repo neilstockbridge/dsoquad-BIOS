@@ -55,9 +55,9 @@ VPATH = stm:USBLib:src
 .S.o:
 	$(CC) $(AFLAGS) -c -o $@ $<
 
-all: $(DELIVERABLES)
+all: $(DELIVERABLES) SYS.elf
 	$(SIZE) SYS.elf
 
 clean:
-	rm -f $(DELIVERABLES) $(NAME).map $(PARTS)
+	rm -f $(DELIVERABLES) SYS.elf $(NAME).map $(PARTS)
 
