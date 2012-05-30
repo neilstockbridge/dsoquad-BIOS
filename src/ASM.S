@@ -14,6 +14,8 @@
 // void CTR_HP(void)     USB_HP_Interrupt
 //-------------------------------------------------------------------------------
 .globl __CTR_HP
+// .thumb_func is required before each label otherwise the linker generates
+// BLX <immediate> instructions instead of Cortex-M3 compatible code
 .thumb_func
 __CTR_HP:
     B.W    CTR_HP
@@ -43,6 +45,7 @@ __Point_SCR:
 //-------------------------------------------------------------------------------
 
 .globl __LCD_SetPixl
+.thumb_func
 __LCD_SetPixl:
     B   LCD_SetPixl
     B   LCD_SetPixl
@@ -73,6 +76,7 @@ __LCD_Set_Block:
 //-------------------------------------------------------------------------------
 
 .globl __LCD_DMA_Ready
+.thumb_func
 __LCD_DMA_Ready:
     B    LCD_DMA_Ready
     B    LCD_DMA_Ready
@@ -81,7 +85,8 @@ __LCD_DMA_Ready:
 // void __LCD_Copy(uc16 *pBuffer, u16 NumPixel)  Send a row data to LCD
 //-------------------------------------------------------------------------------
 
-.globl __LDC_Copy
+.globl __LCD_Copy
+.thumb_func
 __LCD_Copy:
     B    LCD_Copy
     B    LCD_Copy
@@ -90,6 +95,7 @@ __LCD_Copy:
 //-------------------------------------------------------------------------------
 
 .globl __LCD_Fill
+.thumb_func
 __LCD_Fill:
     B    LCD_Fill
     B    LCD_Fill
@@ -98,6 +104,7 @@ __LCD_Fill:
 //-------------------------------------------------------------------------------
 
 .globl __Row_DMA_Ready
+.thumb_func
 __Row_DMA_Ready:
     B    Row_DMA_Ready
     B    Row_DMA_Ready
@@ -106,6 +113,7 @@ __Row_DMA_Ready:
 //-------------------------------------------------------------------------------
 
 .globl __Row_Copy
+.thumb_func
 __Row_Copy:
     B    Row_Copy
     B    Row_Copy
@@ -114,6 +122,7 @@ __Row_Copy:
 //-------------------------------------------------------------------------------
 
 .globl __Read_FIFO
+.thumb_func
 __Read_FIFO:
     B    Read_FIFO
     B    Row_Copy
@@ -128,6 +137,7 @@ __Input_Lic:
 //-------------------------------------------------------------------------------
 
 .globl __Dev_SN
+.thumb_func
 __Dev_SN:
     B    Dev_SN
     B    Dev_SN
@@ -136,6 +146,7 @@ __Dev_SN:
 //-------------------------------------------------------------------------------
 
 .globl __Chk_SYS
+.thumb_func
 __Chk_SYS:
     B    Chk_SYS
     B    Chk_SYS
@@ -143,6 +154,7 @@ __Chk_SYS:
 // u8 __Ident(u32 Dev_ID, u32 Proj_ID, u32 Lic_No)          RET: 1 = licence ok
 //-------------------------------------------------------------------------------
 
+.thumb_func
 __Ident:
     B    Ident
     B    Ident
@@ -248,6 +260,7 @@ __FLASH_Lock:
 // u8*  __Chk_DFU(void)
 //-------------------------------------------------------------------------------
 .globl __Chk_DFU
+.thumb_func
 __Chk_DFU:
     B    Chk_DFU
     B    Chk_DFU
@@ -255,6 +268,7 @@ __Chk_DFU:
 // u8*  __Chk_HDW(void)
 //-------------------------------------------------------------------------------
 .globl __Chk_HDW
+.thumb_func
 __Chk_HDW:
     B    Chk_HDW
     B    Chk_HDW
@@ -296,6 +310,7 @@ __CloseFile:
 //===============================================================================
 // void __Row_Fill(uc16 *S_Buffer,u16 *T_Buffer) Fill one row base data to buffer
 //-------------------------------------------------------------------------------
+.thumb_func
 __Row_Fill:
     B     Row_Fill
     B     Row_Fill
