@@ -80,7 +80,6 @@ void Reset_Handler(void) {
     stack_pointer = &_estack;
     SCB->VTOR = (u32)g_pfnVectors;
     __Init_Data();
-    __USB_Init();
     main();
     while(1) {}
 }
