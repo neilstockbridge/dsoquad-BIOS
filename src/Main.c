@@ -63,20 +63,19 @@ int main(void)
   ADC_Config();
   DAC_Config();
   
-  Beep(20, 500); 
   LCD_Initial();
   Clear_Screen(0x0000);
 
   Display_Logo(70,150); 
   
   Display_Str( 5*8, 90, GRN, PRN,  "Hardware Ver " );
-  Display_Str(18*8, 90, GRN, PRN,  (u8*)Get(HDWVER, 0));
+  Display_Str(18*8, 90, GRN, PRN,  (char*)Get(HDWVER, 0));
   Display_Str(25*8, 90, GRN, PRN, "Serial No: ");
   Word2Hex(NumStr, __Dev_SN());            
-  Display_Str(36*8, 90, YEL, PRN, NumStr);      // 显示读取到的设备序列号
+  Display_Str(36*8, 90, YEL, PRN, (char*)NumStr);      // 显示读取到的设备序列号
 
   Display_Str( 6*8, 70, GRN, PRN, "     DS203 Mini DSO SYS Ver            ");
-  Display_Str(34*8, 70, GRN, PRN, (u8*)Get(SYSVER, 0)); // 显示SYS固件版本号
+  Display_Str(34*8, 70, GRN, PRN, (char*)Get(SYSVER, 0)); // 显示SYS固件版本号
   
   if((KEY2_OFF)&&(KEY3_OFF)&&(KEY4_OFF)){       // 开机无按键按下
     Key_Buffer = 0;                             // 清除按键状态，开始等待新的按键
