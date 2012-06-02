@@ -1,7 +1,15 @@
 
 # dsoquad-BIOS
 
-This is intended to be a port of SYS ( AKA The BIOS) to gcc.  Currently it compiles ( albeit with warnings) and links and looks about the right size, but if you flash it you will get only a white screen on startup.
+This is a port of SYS ( AKA The BIOS) to gcc.
+
+
+## Current status
+
+It seems to work with the official APP1 although `USB_Init` does not work yet.
+
+
+## Files and folders
 
 folder    | notes
 ----------|-------------------------------------------------------------------
