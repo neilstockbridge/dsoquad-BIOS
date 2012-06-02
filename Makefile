@@ -24,7 +24,7 @@ CFLAGS += -fno-common -Os -std=gnu99 -ffunction-sections
 CFLAGS += -Wall -Wno-unused
 
 # Default linker arguments (disables GCC-provided startup.c, creates .map file)
-LFLAGS += -nostartfiles -Wl,-Map=$(NAME).map -eReset_Handler -Wl,-gc-sections
+LFLAGS += -mthumb -march=armv7 -mfix-cortex-m3-ldrd -nostartfiles -Wl,-Map=$(NAME).map -eReset_Handler -Wl,-gc-sections
 
 AFLAGS = -mcpu=cortex-m3
 
