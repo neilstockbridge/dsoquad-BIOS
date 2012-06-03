@@ -1,4 +1,3 @@
-
 # dsoquad-BIOS
 
 This is a port of SYS ( AKA The BIOS) to gcc.
@@ -6,7 +5,7 @@ This is a port of SYS ( AKA The BIOS) to gcc.
 
 ## Current status
 
-It seems to work with the official APP1 although `USB_Init` does not work yet.
+Based on SYS 1.50.  It seems to work with the official APP1 although `USB_Init` does not work yet.
 
 
 ## Files and folders
